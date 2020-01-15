@@ -7,7 +7,9 @@ const connect = function() {
   });
 
   conn.on("connect", data => {
-    conn.write("Name: YYZ", data);
+    conn.write("Name: YYZ");
+    conn.write("Move: up");
+
     console.log("Successfully connected to game server");
   });
 
@@ -20,4 +22,4 @@ const connect = function() {
   return conn;
 };
 
-module.exports = connect;
+module.exports = { connect };
